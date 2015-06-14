@@ -17,8 +17,8 @@ The program then uses gsub to replace the activity numbers with the associated a
 
 The program then uses lapply to find the means of each of the measurements for each subject and activity and then writes that file to Mean_by_Subject_Activity.txt.  The variables included in the final data set are given below.
 
-Variables included in Mean_by_Subject_Activity.txt.
-===============================================
+Variables included in Mean_by_Subject_Activity.txt
+===================================================
 Subject
 Actvity
 tBodyAcc-mean()-X
