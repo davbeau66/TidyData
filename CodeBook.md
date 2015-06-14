@@ -4,36 +4,20 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 A description of the method used to collect the measurements in the original data set is provided below with a description of the features 
 
-used in the data set.  The original data set includes multiple observations of subjects performing 6 activities.  The objective of this project 
-
-was to identify the measurements in the orignal data set that evaluated the mean or standard deviation of on the features being measured 
-
-and then to find the mean of each of these measurements for each subject and activity in the data set.
+used in the data set.  The original data set includes multiple observations of subjects performing 6 activities.  The objective of this project was to identify the measurements in the orignal data set that evaluated the mean or standard deviation of on the features being measured and then to find the mean of each of these measurements for each subject and activity in the data set.
 
 
 Description of run_analysis.R
 ============================
-The program run_analysis.R reads in subject_test.txt, X_test.txt, y_test.txt, subject_train.txt, X_train.txt, y_train.txt and features.txt. as 
+The program run_analysis.R reads in subject_test.txt, X_test.txt, y_test.txt, subject_train.txt, X_train.txt, y_train.txt and features.txt. as tables.  It then merges the data measurement files (X_test.txt and X_train.txt) to create testData and then uses the features file to name the columns.  It also merges the subject files to create subjectData and the y files which have the  activities for each measurement observation to create activityData.
 
-tables.  It then merges the data measurement files (X_test.txt and X_train.txt) to create testData and then uses the features file to name the 
-
-columns.  It also merges the subject files to create subjectData and the y files which have the  activities for each measurement observation 
-
-to create activityData.
-
-It then uses the grepl command to create logical vectors indicating which measurements are means or standard deviations.  By "OR"ing the 
-
-vectors, a vector with the measurements wanted for the final data set isidentified.  This is used to take a subset of the measurement data 
-
-with the measuremetns of interest.
+It then uses the grepl command to create logical vectors indicating which measurements are means or standard deviations.  By "OR"ing the vectors, a vector with the measurements wanted for the final data set isidentified.  This is used to take a subset of the measurement data with the measurements of interest.
 
 The program then creates a new table (testMeanStd) which adds the subjectData and activityData to testData.
 
 The program then uses gsub to replace the activity numbers with the associated activity (i.e. 1 = "Sitting")
 
-The program then uses lapply to find the means of each of the measurements for each subject and activity and then writes that file to 
-
-Mean_by_Subject_Activity.txt.  The variables included in the final data set are given below.
+The program then uses lapply to find the means of each of the measurements for each subject and activity and then writes that file to Mean_by_Subject_Activity.txt.  The variables included in the final data set are given below.
 
 Variables included in Mean_by_Subject_Activity.txt.
 ===============================================
@@ -127,7 +111,7 @@ angle(Y,gravityMean)
 
 
 Description of Original Data Set
-=============================
+================================
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six 
 
